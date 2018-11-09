@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Frends.Community.XmlSignature</id>
+    <version>0.0.4</version>
+    <title>Frends.Community.XmlSignature</title>
+    <authors>HiQ Finland</authors>
+    <owners>HiQ Finland</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XmlEnvelopedSigning and verification</description>
+    <copyright>HiQ Finland</copyright>
+    <tags>Xml, Sign, XmlSignature</tags>
+    <dependencies>
+      
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.ComponentModel" targetFramework="net471" />
+      <frameworkAssembly assemblyName="System.ComponentModel.DataAnnotations" targetFramework="net471" />
+      <frameworkAssembly assemblyName="System.Security" targetFramework="net471" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net471" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="bin\release\Frends.Community.XmlSignature.dll" target="lib\net471\Frends.Community.XmlSignature.dll" />
+    <file src="bin\release\Frends.Community.XmlSignature.xml" target="lib\net471\Frends.Community.XmlSignature.xml" />
+    <file src="FrendsTaskMetadata.json" target="FrendsTaskMetadata.json" />
+  </files>
+</package>

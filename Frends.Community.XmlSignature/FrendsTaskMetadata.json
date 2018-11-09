@@ -1,0 +1,10 @@
+{
+  "Tasks": [
+    {
+      "TaskMethod": "Frends.Community.XmlSignature.SigningTask.SignXml"
+    },
+    {
+      "TaskMethod": "Frends.Community.XmlSignature.VerifyTask.VerifySignedXml"
+    }
+  ]
+}
