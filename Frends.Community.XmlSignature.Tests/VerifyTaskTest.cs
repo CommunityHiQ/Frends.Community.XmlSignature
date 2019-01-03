@@ -24,14 +24,17 @@ namespace Frends.Community.XmlSignature.Tests
                 XmlEnvelopingType = XmlEnvelopingType.XmlEnvelopedSignature,
                 Xml = "<root><foo>bar</foo></root>"
             };
+            var output = new SignXmlOutput
+            {
+                OutputType = XmlParamType.XmlString
+            };
             var options = new SignXmlOptions
             {
                 DigestMethod = DigestMethod.SHA256,
-                OutputType = XmlParamType.XmlString,
                 TransformMethods = new [] { TransformMethod.DsigExcC14 },
                 XmlSignatureMethod = XmlSignatureMethod.RSASHA256
             };
-            string signedXml = SigningTask.SignXml(input, options).Result;
+            string signedXml = SigningTask.SignXml(input, output, options).Result;
             var verifyInput = new VerifySignatureInput
             {
                 XmlInputType = XmlParamType.XmlString,

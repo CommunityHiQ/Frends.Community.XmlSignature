@@ -54,6 +54,36 @@ namespace Frends.Community.XmlSignature
         public string PrivateKeyPassword { get; set; }
     }
 
+    public class SignXmlOutput
+    {
+        /// <summary>
+        /// Output to file or xml string?
+        /// </summary>
+        public XmlParamType OutputType { get; set; }
+
+        /// <summary>
+        /// Output file path
+        /// </summary>
+        [DefaultValue("c:\\temp\\signedOutput.xml")]
+        [DisplayFormat(DataFormatString = "Text")]
+        [UIHint(nameof(OutputType), "", XmlParamType.File)]
+        public string OutputFilePath { get; set; }
+
+        /// <summary>
+        /// Output file encoding
+        /// </summary>
+        [DefaultValue("UTF-8")]
+        [DisplayFormat(DataFormatString = "Text")]
+        [UIHint(nameof(OutputType), "", XmlParamType.File)]
+        public string OutputEncoding { get; set; }
+
+        /// <summary>
+        /// If source is file, then you can add signature to it
+        /// </summary>
+        [UIHint(nameof(OutputType), "", XmlParamType.File)]
+        public bool AddSignatureToSourceFile { get; set; }
+    }
+
     /// <summary>
     /// Signing options
     /// </summary>
@@ -80,27 +110,6 @@ namespace Frends.Community.XmlSignature
         /// Which transform methods to use
         /// </summary>
         public TransformMethod[] TransformMethods { get; set; }
-
-        /// <summary>
-        /// Output to file or xml string?
-        /// </summary>
-        public XmlParamType OutputType { get; set; }
-
-        /// <summary>
-        /// Output file path
-        /// </summary>
-        [DefaultValue("c:\\temp\\signedOutput.xml")]
-        [DisplayFormat(DataFormatString = "Text")]
-        [UIHint(nameof(OutputType), "", XmlParamType.File)]
-        public string OutputFilePath { get; set; }
-
-        /// <summary>
-        /// Output file encoding
-        /// </summary>
-        [DefaultValue("UTF-8")]
-        [DisplayFormat(DataFormatString = "Text")]
-        [UIHint(nameof(OutputType), "", XmlParamType.File)]
-        public string OutputEncoding { get; set; }
     }
 
     public class SigningResult

@@ -15,15 +15,16 @@ namespace Frends.Community.XmlSignature
         /// Signs an xml document
         /// </summary>
         /// <param name="input"></param>
+        /// <param name="output"></param>
         /// <param name="options"></param>
         /// <returns></returns>
-        public static SigningResult SignXml([PropertyTab] SignXmlInput input, [PropertyTab] SignXmlOptions options)
+        public static SigningResult SignXml([PropertyTab] SignXmlInput input, [PropertyTab] SignXmlOutput output, [PropertyTab] SignXmlOptions options)
         {
             var result = new SigningResult();
             var xmldoc = new XmlDocument() { PreserveWhitespace = options.PreserveWhitespace };
             StreamReader xmlStream = null;
 
-            if(input.XmlInputType == XmlParamType.File)
+            if (input.XmlInputType == XmlParamType.File)
             {
                 xmlStream = new StreamReader(input.XmlFilePath);
                 xmldoc.Load(xmlStream);
@@ -125,27 +126,34 @@ namespace Frends.Community.XmlSignature
             xmldoc.DocumentElement.AppendChild(xmldoc.ImportNode(signedXml.GetXml(), true));
 
             // output results either to a file or result object
-            if(options.OutputType == XmlParamType.File)
+            if(output.OutputType == XmlParamType.File)
             {
-                // signed xml document is written in target destination
-                using (var writer = new XmlTextWriter(options.OutputFilePath, Encoding.GetEncoding(options.OutputEncoding)))
+                xmlStream.Dispose();
+                
+                if (output.AddSignatureToSourceFile)
                 {
-                    xmldoc.WriteTo(writer);
-                }
+                    // signed xml document is written in target destination
+                    xmldoc.Save(input.XmlFilePath);
 
-                // and result will indicate the document path
-                result.Result = options.OutputFilePath;
+                    // and result will indicate the source file path
+                    result.Result = input.XmlFilePath;
+                }
+                else
+                {
+                    // signed xml document is written in target destination
+                    using (var writer = new XmlTextWriter(output.OutputFilePath, Encoding.GetEncoding(output.OutputEncoding)))
+                    {
+                        xmldoc.Save(writer);
+                    }
+
+                    // and result will indicate the document path
+                    result.Result = output.OutputFilePath;
+                }
             }
             else
             {
                 // signed xml document is returned from task
                 result.Result = xmldoc.OuterXml;
-            }
-
-            // close stream if input was a file
-            if(input.XmlInputType == XmlParamType.File)
-            {
-                xmlStream.Dispose();
             }
 
             return result;
