@@ -62,7 +62,7 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 |-----------|-------|-------------|-------|
 | XmlInputType  | `XmlParamType` | Choose input type | Possible values: `File`, `XML-string` |
 | XmlFilePath  | `string` | Path of the XML file to be signed. | `c:\temp\document.xml` |
-| Xml  | `string` | File as XML string | `XML-string` |
+| Xml  | `string` | File as XML-string | `XML-string` |
 | XmlEnvelopingType  | `XmlEnvelopingType` | Choose the type of enveloping | Possible values: `XmlEnvelopedSignature` |
 | SigningStrategyType  | `SigningStrategyType` | Choose the type of signing | Possible values: `PrivateKeyCertificate` |
 | CertificatePath  | `string` | Path for certificate file | `c:\certificates\signingcertificate.pfx` |
@@ -84,14 +84,14 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 | IncludeComments  | `boolean` | If true, add additional transform methods | `true` |
 | PreserveWhitespace  | `boolean` | Preserve whitespace when loading xml? | `true` |
 | XmlSignatureMethod  | `XmlSignatureMethod` | Method for XML signature | Possible values: `RSASHA1`, `RSASHA256`, `RSASHA384`, `RSASHA512` |
-| DigestMethod  | `DigestMethod` | Digest method to use | Possible values: SHA1, SHA256, SHA384, SHA512 |
+| DigestMethod  | `DigestMethod` | Digest method to use | Possible values: `SHA1`, `SHA256`, `SHA384`, `SHA512` |
 | TransformMethods  | `TransformMethod` | Transform methods to use | Possible values: `DsigC14`, `DsigC14WithComments`, `DsigExcC14`, `DsigExcC14WithComments`, `DsigBase64` |
 
 #### Result
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| Result  | `string` | Depending on params OutputType and AddSignatureToSourceFile this contains either XML string or filepath | |
+| Result  | `string` | Depending on params OutputType and AddSignatureToSourceFile this contains either XML-string or filepath | |
 
 
 ### VerifyXml
@@ -104,7 +104,7 @@ Task for verifying signatures of Xml files.
 |-----------|-------|-------------|-------|
 | XmlInputType  | `XmlParamType` | Choose input type | Possible values: `File`, `XML-string` |
 | XmlFilePath  | `string` | Path of the XML file to be signed. | `c:\temp\documentToVerify.xml` |
-| Xml  | `string` | File as XML string | `XML-string` |
+| Xml  | `string` | File as XML-string | `XML-string` |
 
 #### Options
 
@@ -117,10 +117,6 @@ Task for verifying signatures of Xml files.
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
 | IsValid  | `boolean` | Is document valid? | `true` |
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Changelog
 
