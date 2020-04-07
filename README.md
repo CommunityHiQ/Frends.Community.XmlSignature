@@ -60,11 +60,11 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 #### Input
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| XmlInputType  | `XmlParamType` | Choose input type | Possible values: File, XML-string |
+| XmlInputType  | `XmlParamType` | Choose input type | Possible values: `File`, `XML-string` |
 | XmlFilePath  | `string` | Path of the XML file to be signed. | `c:\temp\document.xml` |
-| Xml  | `string` | File as XML string | XML-string |
-| XmlEnvelopingType  | `XmlEnvelopingType` | Choose the type of enveloping | Possible values: XmlEnvelopedSignature |
-| SigningStrategyType  | `SigningStrategyType` | Choose the type of signing | Possible values: PrivateKeyCertificate |
+| Xml  | `string` | File as XML string | `XML-string` |
+| XmlEnvelopingType  | `XmlEnvelopingType` | Choose the type of enveloping | Possible values: `XmlEnvelopedSignature` |
+| SigningStrategyType  | `SigningStrategyType` | Choose the type of signing | Possible values: `PrivateKeyCertificate` |
 | CertificatePath  | `string` | Path for certificate file | `c:\certificates\signingcertificate.pfx` |
 | PrivateKeyPassword  | `string` | Password used for certificate file |  |
 
@@ -72,10 +72,10 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| OutputType  | `XmlParamType` | Output format | Possible values: File or XML String |
+| OutputType  | `XmlParamType` | Output format | Possible values: `File` or `XML-string` |
 | OutputFilePath  | `string` | Path for the signed XML file | `c:\temp\signedOutput.xml` |
 | OutputEncoding  | `string` | Encoding for output file | `UTF-8` |
-| AddSignatureToSourceFile  | `boolean` | | `true` |
+| AddSignatureToSourceFile  | `boolean` | If true, add signature to original input file | `true` |
 
 #### Options
 
@@ -83,15 +83,15 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 |-----------|-------|-------------|-------|
 | IncludeComments  | `boolean` | If true, add additional transform methods | `true` |
 | PreserveWhitespace  | `boolean` | Preserve whitespace when loading xml? | `true` |
-| XmlSignatureMethod  | `XmlSignatureMethod` | Method for XML signature | Possible values: RSASHA1, RSASHA256, RSASHA384, RSASHA512 |
+| XmlSignatureMethod  | `XmlSignatureMethod` | Method for XML signature | Possible values: `RSASHA1`, `RSASHA256`, `RSASHA384`, `RSASHA512` |
 | DigestMethod  | `DigestMethod` | Digest method to use | Possible values: SHA1, SHA256, SHA384, SHA512 |
-| TransformMethods  | `TransformMethod` | Transform methods to use | Possible values: DsigC14, DsigC14WithComments, DsigExcC14, DsigExcC14WithComments, DsigBase64 |
+| TransformMethods  | `TransformMethod` | Transform methods to use | Possible values: `DsigC14`, `DsigC14WithComments`, `DsigExcC14`, `DsigExcC14WithComments`, `DsigBase64` |
 
 #### Result
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| Result  | string | Depending on params OutputType and AddSignatureToSourceFile this contains either XML string or filepath | |
+| Result  | `string` | Depending on params OutputType and AddSignatureToSourceFile this contains either XML string or filepath | |
 
 
 ### VerifyXml
@@ -102,21 +102,21 @@ Task for verifying signatures of Xml files.
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| XmlInputType  | XmlParamType | Choose input type | Possible types: File, XML-string |
-| XmlFilePath  | string | Path of the XML file to be signed. | c:\temp\documentToVerify.xml |
-| Xml  | string | File as XML string | XML-string |
+| XmlInputType  | `XmlParamType` | Choose input type | Possible values: `File`, `XML-string` |
+| XmlFilePath  | `string` | Path of the XML file to be signed. | `c:\temp\documentToVerify.xml` |
+| Xml  | `string` | File as XML string | `XML-string` |
 
 #### Options
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| PreserveWhitespace  | boolean | Preserve whitespace when loading xml? | true |
+| PreserveWhitespace  | `boolean` | Preserve whitespace when loading xml? | `true` |
 
 #### Result
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| IsValid  | boolean | Is document valid? | true |
+| IsValid  | `boolean` | Is document valid? | `true` |
 
 ## License
 
