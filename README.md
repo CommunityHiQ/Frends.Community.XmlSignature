@@ -55,7 +55,7 @@ NOTE: Be sure to merge the latest from "upstream" before making a pull request!
 
 ### SignXml
 
-Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-string and outputs a signed version of it.
+Signs a XML document (XMLDSIG). Takes XML input either as a file or as a XML-string and outputs a signed version of it.
 
 #### Input
 | Property  | Type  | Description |Example|
@@ -72,7 +72,7 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| OutputType  | `XmlParamType` | Output format | Possible values: `File` or `XML-string` |
+| OutputType  | `XMLParamType` | Output format | Possible values: `File` or `XML-string` |
 | OutputFilePath  | `string` | Path for the signed XML file | `c:\temp\signedOutput.xml` |
 | OutputEncoding  | `string` | Encoding for output file | `UTF-8` |
 | AddSignatureToSourceFile  | `boolean` | If true, add signature to original input file | `true` |
@@ -82,7 +82,7 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
 | IncludeComments  | `boolean` | If true, add additional transform methods | `true` |
-| PreserveWhitespace  | `boolean` | Preserve whitespace when loading xml? | `true` |
+| PreserveWhitespace  | `boolean` | Preserve whitespace when loading XML? | `true` |
 | XmlSignatureMethod  | `XmlSignatureMethod` | Method for XML signature | Possible values: `RSASHA1`, `RSASHA256`, `RSASHA384`, `RSASHA512` |
 | DigestMethod  | `DigestMethod` | Digest method to use | Possible values: `SHA1`, `SHA256`, `SHA384`, `SHA512` |
 | TransformMethods  | `TransformMethod` | Transform methods to use | Possible values: `DsigC14`, `DsigC14WithComments`, `DsigExcC14`, `DsigExcC14WithComments`, `DsigBase64` |
@@ -96,7 +96,7 @@ Signs a xml document (XMLDSIG). Takes Xml input either as a file or as a Xml-str
 
 ### VerifyXml
 
-Task for verifying signatures of Xml files.
+Task for verifying signatures of XML files.
 
 #### Input
 
@@ -110,7 +110,7 @@ Task for verifying signatures of Xml files.
 
 | Property  | Type  | Description |Example|
 |-----------|-------|-------------|-------|
-| PreserveWhitespace  | `boolean` | Preserve whitespace when loading xml? | `true` |
+| PreserveWhitespace  | `boolean` | Preserve whitespace when loading XML? | `true` |
 
 #### Result
 
