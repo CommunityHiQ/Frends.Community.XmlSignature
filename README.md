@@ -11,7 +11,6 @@ This repository contains tasks to sign XML files and verify signed XML files.
   - [Tasks](#tasks)
      - [SignXml](#signxml)
      - [VerifyXml](#verifyxml)
-  - [License](#license)
   - [Changelog](#changelog)
 
 ## Installing
