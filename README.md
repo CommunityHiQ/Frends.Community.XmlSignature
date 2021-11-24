@@ -1,3 +1,5 @@
+This repository is archived and tasks have been moved to https://github.com/CommunityHiQ/Frends.Community.Xml
+
 # Frends.Community.XmlSignature
 
 This repository contains tasks to sign XML files and verify signed XML files.
